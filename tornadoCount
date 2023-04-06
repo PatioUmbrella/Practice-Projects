@@ -1,0 +1,80 @@
+import pandas as pd
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+import numpy as np
+import seaborn as sns
+
+sns.set_style("darkgrid")
+sns.set_context("poster")
+
+#read csv tornado data
+Jan = pd.read_csv(r'C:\Users\Samsquanch\Desktop\Python\nados\January.csv')
+Feb = pd.read_csv(r'C:\Users\Samsquanch\Desktop\Python\nados\February.csv')
+Mar = pd.read_csv(r'C:\Users\Samsquanch\Desktop\Python\nados\March.csv')
+Apr = pd.read_csv(r'C:\Users\Samsquanch\Desktop\Python\nados\April.csv')
+May = pd.read_csv(r'C:\Users\Samsquanch\Desktop\Python\nados\May.csv')
+Jun = pd.read_csv(r'C:\Users\Samsquanch\Desktop\Python\nados\June.csv')
+Jul = pd.read_csv(r'C:\Users\Samsquanch\Desktop\Python\nados\July.csv')
+Aug = pd.read_csv(r'C:\Users\Samsquanch\Desktop\Python\nados\August.csv')
+Sep = pd.read_csv(r'C:\Users\Samsquanch\Desktop\Python\nados\September.csv')
+Oct = pd.read_csv(r'C:\Users\Samsquanch\Desktop\Python\nados\October.csv')
+Nov = pd.read_csv(r'C:\Users\Samsquanch\Desktop\Python\nados\November.csv')
+Dec = pd.read_csv(r'C:\Users\Samsquanch\Desktop\Python\nados\December.csv')
+
+#change date series to datetimes
+JanDates = Jan['Date']
+NewJan = pd.to_datetime(JanDates, format='%Y%m')
+
+FebDates = Feb['Date']
+NewFeb = pd.to_datetime(FebDates, format='%Y%m')
+
+MarDates = Mar['Date']
+NewMar = pd.to_datetime(MarDates, format='%Y%m')
+
+AprDates = Apr['Date']
+NewApr = pd.to_datetime(AprDates, format='%Y%m')
+
+MayDates = May['Date']
+NewMay = pd.to_datetime(MayDates, format='%Y%m')
+
+JunDates = Jun['Date']
+NewJun = pd.to_datetime(JunDates, format='%Y%m')
+
+JulDates = Jul['Date']
+NewJul = pd.to_datetime(JulDates, format='%Y%m')
+
+AugDates = Aug['Date']
+NewAug = pd.to_datetime(AugDates, format='%Y%m')
+
+SepDates = Sep['Date']
+NewSep = pd.to_datetime(SepDates, format='%Y%m')
+
+OctDates = Oct['Date']
+NewOct = pd.to_datetime(OctDates, format='%Y%m')
+
+NovDates = Nov['Date']
+NewNov = pd.to_datetime(NovDates, format='%Y%m')
+
+DecDates = Dec['Date']
+NewDec = pd.to_datetime(DecDates, format='%Y%m')
+
+#plot line
+plt.plot(NewJan, Jan['Tornadoes'], color='purple')
+plt.plot(NewFeb, Feb['Tornadoes'], color='pink')
+plt.plot(NewMar, Mar['Tornadoes'], color='green')
+plt.plot(NewApr, Apr['Tornadoes'], color='red')
+plt.plot(NewMay, May['Tornadoes'], color='blue')
+plt.plot(NewJun, Jun['Tornadoes'], color='yellow')
+plt.plot(NewJul, Jul['Tornadoes'], color='orange')
+plt.plot(NewAug, Aug['Tornadoes'], color='brown')
+plt.plot(NewSep, Sep['Tornadoes'], color='cyan')
+plt.plot(NewOct, Oct['Tornadoes'], color='black')
+plt.plot(NewNov, Nov['Tornadoes'], color='olive')
+plt.plot(NewDec, Dec['Tornadoes'], color='gray')
+
+plt.ylabel('Tornadoes')
+plt.xlabel('Date')
+
+#show graph
+plt.show()
