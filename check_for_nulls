@@ -1,0 +1,6 @@
+import pandas as pd
+df = pd.read_csv(r"Train.csv")
+print(df)
+df.head()
+df.info()
+#no null cells!
